@@ -9,14 +9,14 @@ gen/
 node_modules/
 target/
 
-# Web IDE, App Studio
-.che/
-.gen/
-
 # MTA
 *_mta_build_tmp
 *.mtar
 mta_archives/
+
+# Web IDE, App Studio
+.che/
+.gen/
 
 # Other
 .DS_Store

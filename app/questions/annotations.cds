@@ -102,11 +102,6 @@ annotate service.Questions with @(
     UI.Identification : [
         {
             $Type : 'UI.DataField',
-            Value : answer_ID,
-            Label : 'Answer_ID',
-        },
-        {
-            $Type : 'UI.DataField',
             Value : answer.answer,
             Label : 'Answer',
         },
@@ -114,24 +109,41 @@ annotate service.Questions with @(
             $Type : 'UI.DataField',
             Value : answer.modifiedAt,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : answer.modifiedBy,
+        },
     ],
 );
 
+annotate service.Answers with {
+    ID @Common.Text : answer
+};
+
 annotate service.Questions with {
-    answer @Common.ValueList : {
-        $Type : 'Common.ValueListType',
-        CollectionPath : 'Answers',
-        Parameters : [
-            {
-                $Type : 'Common.ValueListParameterInOut',
-                LocalDataProperty : answer_ID,
-                ValueListProperty : 'ID',
-            },
-            {
-                $Type : 'Common.ValueListParameterDisplayOnly',
-                ValueListProperty : 'answer',
-            },
-        ],
-    }
+    answer @(Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'Answers',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : answer_ID,
+                    ValueListProperty : 'ID',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'answer',
+                },
+            ],
+        },
+        Common.ValueListWithFixedValues : false,
+        )};
+
+annotate service.Questions with {
+    questionVector @Common.FieldControl : #ReadOnly
+};
+
+annotate service.Answers with {
+    answer @Common.FieldControl : #ReadOnly
 };
 

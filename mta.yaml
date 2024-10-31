@@ -11,7 +11,6 @@ build-parameters:
       commands:
         - npm ci
         - npx cds build --production
-        - npx rimraf gen/db/src/gen/data
 modules:
   - name: sap-btp-tech-support-app-srv
     type: nodejs
@@ -27,8 +26,8 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      - name: TechWins_XSUAA
-      - name: support_db
+      - name: sap-btp-tech-support-app-auth
+      - name: sap-btp-tech-support-app-db
 
   - name: sap-btp-tech-support-app
     type: approuter.nodejs
@@ -44,7 +43,7 @@ modules:
           name: srv-api # must be used in xs-app.json as well
           url: ~{srv-url}
           forwardAuthToken: true
-      - name: TechWins_XSUAA
+      - name: sap-btp-tech-support-app-auth
       - name: sap-btp-tech-support-app-html5-runtime
 
   - name: sap-btp-tech-support-app-db-deployer
@@ -53,7 +52,7 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
     requires:
-      - name: support_db
+      - name: sap-btp-tech-support-app-db
 
   - name: sap-btp-tech-support-app-app-deployer
     type: com.sap.application.content
@@ -83,7 +82,8 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms: []
+      supported-platforms:
+        []
   - name: sapbtptechsupportappquestions
     type: html5
     path: app/questions
@@ -93,10 +93,11 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms: []
+      supported-platforms:
+        []
 
 resources:
-  - name: TechWins_XSUAA
+  - name: sap-btp-tech-support-app-auth
     type: org.cloudfoundry.managed-service
     parameters:
       service: xsuaa
@@ -105,11 +106,11 @@ resources:
       config:
         xsappname: sap-btp-tech-support-app-${org}-${space}
         tenant-mode: dedicated
-  - name: support_db
+  - name: sap-btp-tech-support-app-db
     type: com.sap.xs.hdi-container
     parameters:
-      service: hana
-      service-plan: hdi-shared
+      service: hana-cloud
+      service-plan: hana
 
   - name: sap-btp-tech-support-app-html5-repo-host
     type: org.cloudfoundry.managed-service

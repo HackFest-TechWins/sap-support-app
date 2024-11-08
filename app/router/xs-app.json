@@ -1,4 +1,6 @@
 {
+  "welcomeFile": "/launchpage.html",
+  "authenticationMethod": "xsuaa",
   "routes": [
     {
       "source": "^/app/(.*)$",

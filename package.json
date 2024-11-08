@@ -9,7 +9,8 @@
     "@cap-js/hana": "^1",
     "@sap/cds": "^8",
     "@sap/xssec": "^4",
-    "express": "^4"
+    "express": "^4",
+    "hana-cli": "^3.202405.1"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.6",
@@ -29,25 +30,19 @@
     "watch-answers": "cds watch --open answers/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
+    "fiori": {
+      "preview": true
+    },
+    "server": {
+      "index": true
+    },
     "requires": {
-      "[development]": {
-        "auth": {
-          "kind": "mocked",
-          "users": {
-            "test.support@qarmet.kz": {
-              "password": "root",
-              "roles": [
-                "support"
-              ]
-            }
-          }
-        }
-      },
       "[production]": {
         "db": "hana",
         "auth": "xsuaa"
       },
-      "html5-repo": true
+      "html5-repo": true,
+      "destinations": true
     },
     "sql": {
       "native_hana_associations": false

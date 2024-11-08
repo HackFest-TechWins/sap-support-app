@@ -28,6 +28,7 @@ modules:
     requires:
       - name: sap-btp-tech-support-app-auth
       - name: sap-btp-tech-support-app-db
+      - name: sap-btp-tech-support-app-destination
 
   - name: sap-btp-tech-support-app
     type: approuter.nodejs
@@ -45,6 +46,7 @@ modules:
           forwardAuthToken: true
       - name: sap-btp-tech-support-app-auth
       - name: sap-btp-tech-support-app-html5-runtime
+      - name: sap-btp-tech-support-app-destination
 
   - name: sap-btp-tech-support-app-db-deployer
     type: hdb
@@ -82,8 +84,7 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
   - name: sapbtptechsupportappquestions
     type: html5
     path: app/questions
@@ -93,8 +94,7 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
 
 resources:
   - name: sap-btp-tech-support-app-auth
@@ -109,8 +109,8 @@ resources:
   - name: sap-btp-tech-support-app-db
     type: com.sap.xs.hdi-container
     parameters:
-      service: hana-cloud
-      service-plan: hana
+      service: hana
+      service-plan: hdi-shared
 
   - name: sap-btp-tech-support-app-html5-repo-host
     type: org.cloudfoundry.managed-service
@@ -122,3 +122,28 @@ resources:
     parameters:
       service: html5-apps-repo
       service-plan: app-runtime
+  - name: sap-btp-tech-support-app-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      config:
+        HTML5Runtime_enabled: true
+        init_data:
+          instance:
+            existing_destinations_policy: update
+            destinations:
+              - Name: sap-btp-tech-support-app-srv-api
+                URL: ~{srv-api/srv-url}
+                Authentication: NoAuthentication
+                Type: HTTP
+                ProxyType: Internet
+                HTML5.ForwardAuthToken: true
+                HTML5.DynamicDestination: true
+              - Name: ui5
+                URL: https://ui5.sap.com
+                Authentication: NoAuthentication
+                Type: HTTP
+                ProxyType: Internet
+    requires:
+      - name: srv-api

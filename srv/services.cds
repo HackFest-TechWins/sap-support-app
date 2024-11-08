@@ -7,5 +7,3 @@ service SupportService {
   @odata.draft.enabled
   entity Answers as projection on support.Answers;
 }
-
-annotate SupportService with @(requires: 'support');

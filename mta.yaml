@@ -11,6 +11,9 @@ build-parameters:
       commands:
         - npm ci
         - npx cds build --production
+        - mkdir -p resources
+        - cp workzone/cdm.json resources/cdm.json
+
 modules:
   - name: sap-btp-tech-support-app-srv
     type: nodejs
@@ -22,7 +25,7 @@ modules:
     build-parameters:
       builder: npm
     provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+      - name: srv-api
         properties:
           srv-url: ${default-url}
     requires:
@@ -40,7 +43,7 @@ modules:
       - name: srv-api
         group: destinations
         properties:
-          name: srv-api # must be used in xs-app.json as well
+          name: srv-api
           url: ~{srv-url}
           forwardAuthToken: true
       - name: sap-btp-tech-support-app-auth
@@ -64,26 +67,11 @@ modules:
     build-parameters:
       build-result: app/
       requires:
-        - name: sapbtptechsupportappanswers
-          artifacts:
-            - answers.zip
-          target-path: app/
         - name: sapbtptechsupportappquestions
           artifacts:
             - questions.zip
           target-path: app/
 
-  - name: sapbtptechsupportappanswers
-    type: html5
-    path: app/answers
-    build-parameters:
-      build-result: dist
-      builder: custom
-      commands:
-        - npm ci
-        - npm run build
-      supported-platforms:
-        []
   - name: sapbtptechsupportappquestions
     type: html5
     path: app/questions
@@ -93,8 +81,38 @@ modules:
       commands:
         - npm ci
         - npm run build
-      supported-platforms:
-        []
+      supported-platforms: []
+
+  # Добавление destination-content модуля
+  - name: sap-btp-tech-support-app-destination-content
+    type: com.sap.application.content
+    requires:
+      - name: sap-btp-tech-support-app-destination-service
+        parameters:
+          content-target: true
+      - name: sap-btp-tech-support-app-html5-runtime
+        parameters:
+          service-key:
+            name: sap-btp-tech-support-app-html5-runtime-key
+      - name: sap-btp-tech-support-app-html5-repo-host
+        parameters:
+          service-key:
+            name: sap-btp-tech-support-app-html5-repo-host-key
+      - name: sap-btp-tech-support-app-auth
+        parameters:
+          service-key:
+            name: sap-btp-tech-support-app-auth-key
+    parameters:
+      content:
+        subaccount:
+          destinations:
+            - Name: sap-btp-tech-support-app_cdm
+              ServiceInstanceName: sap-btp-tech-support-app-html5-runtime
+              ServiceKeyName: sap-btp-tech-support-app-html5-runtime-key
+              URL: https://html5-apps-repo-rt.${default-domain}/applications/cdm/sap-btp-tech-support-app
+          existing_destinations_policy: ignore
+    build-parameters:
+      no-source: true
 
 resources:
   - name: sap-btp-tech-support-app-auth
@@ -106,6 +124,7 @@ resources:
       config:
         xsappname: sap-btp-tech-support-app-${org}-${space}
         tenant-mode: dedicated
+
   - name: sap-btp-tech-support-app-db
     type: com.sap.xs.hdi-container
     parameters:
@@ -117,8 +136,28 @@ resources:
     parameters:
       service: html5-apps-repo
       service-plan: app-host
+
   - name: sap-btp-tech-support-app-html5-runtime
     type: org.cloudfoundry.managed-service
     parameters:
       service: html5-apps-repo
       service-plan: app-runtime
+
+  # Добавление ресурса destination-service
+  - name: sap-btp-tech-support-app-destination-service
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        init_data:
+          subaccount:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: sap-btp-tech-support-app-rt
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://your-external-service-url.${default-domain}
+                HTML5contentprovider: true
+            existing_destinations_policy: update
+        version: 1.0.0
+      service: destination
+      service-plan: lite

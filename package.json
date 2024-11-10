@@ -50,7 +50,6 @@
     }
   },
   "sapux": [
-    "app/questions",
-    "app/answers"
+    "app/questions"
   ]
 }

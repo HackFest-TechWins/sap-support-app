@@ -1,0 +1,75 @@
+[
+  {
+    "_version": "3.0",
+    "identification": {
+      "id": "defaultCatalogId",
+      "title": "{{title}}",
+      "entityType": "catalog"
+    },
+    "payload": {
+      "viz": [
+        {
+          "appId": "sap-btp-tech-support-app",
+          "vizId": "tech-support-display"
+        }
+      ]
+    },
+    "texts": [
+      {
+        "locale": "",
+        "textDictionary": {
+          "title": "Tech Support Catalog"
+        }
+      }
+    ]
+  },
+  {
+    "_version": "3.0",
+    "identification": {
+      "id": "defaultGroupId",
+      "title": "{{title}}",
+      "entityType": "group"
+    },
+    "payload": {
+      "viz": [
+        {
+          "appId": "sap-btp-tech-support-app",
+          "vizId": "tech-support-display"
+        }
+      ]
+    },
+    "texts": [
+      {
+        "locale": "",
+        "textDictionary": {
+          "title": "Tech Support Business Apps"
+        }
+      }
+    ]
+  },
+  {
+    "_version": "3.0",
+    "identification": {
+      "id": "defaultRole",
+      "entityType": "role",
+      "title": "Tech Support Role"
+    },
+    "payload": {
+      "apps": [
+        {
+          "id": "sap-btp-tech-support-app"
+        }
+      ],
+      "catalogs": [
+        {
+          "id": "defaultCatalogId"
+        }
+      ],
+      "groups": [
+        {
+          "id": "defaultGroupId"
+        }
+      ]
+    }
+  }
+]

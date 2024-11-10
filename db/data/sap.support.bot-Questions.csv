@@ -1,4 +1,0 @@
-ID,answer_ID,question,questionVector,createdAt,createdBy,modifiedAt,modifiedBy
-90f0f395-0eab-4190-86b8-ee823f1aad20,1cb78002-0d81-417b-97e0-8f9f10441fd7,Какой ваш любимый цвет?,NULL,2024-10-27T12:49:34.963Z,incident.support@tester.sap.com,2024-10-27T12:49:34.963Z,incident.support@tester.sap.com
-326b1d07-03b0-4ca9-8a53-26636313b083,b09976ae-70e1-45ae-8c21-df1d07a9dd7b,Какое ваше хобби?,NULL,2024-10-27T12:49:34.963Z,incident.support@tester.sap.com,2024-10-27T12:49:34.963Z,incident.support@tester.sap.com
-dec6047b-3c4d-45c9-9c55-cc1fe3a9a0eb,b09976ae-70e1-45ae-8c21-df1d07a9dd7b,Где вы работаете?,NULL,2024-10-27T12:49:34.963Z,incident.support@tester.sap.com,2024-10-27T12:49:34.963Z,incident.support@tester.sap.com

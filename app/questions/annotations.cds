@@ -13,15 +13,6 @@ annotate service.Questions with @(
                 Value : answer_ID,
                 Label : 'Answer_ID',
             },
-            {
-                $Type : 'UI.DataField',
-                Label : '{i18n>QuestionVector}',
-                Value : questionVector,
-            },
-            {
-                $Type : 'UI.DataField',
-                Value : modifiedBy,
-            },
         ],
     },
     UI.Facets : [
@@ -116,10 +107,6 @@ annotate service.Questions with @(
     ],
 );
 
-annotate service.Answers with {
-    ID @Common.Text : answer
-};
-
 annotate service.Questions with {
     answer @(Common.ValueList : {
             $Type : 'Common.ValueListType',
@@ -142,6 +129,7 @@ annotate service.Questions with {
 annotate service.Questions with {
     questionVector @Common.FieldControl : #ReadOnly
 };
+
 
 annotate service.Answers with {
     answer @Common.FieldControl : #ReadOnly

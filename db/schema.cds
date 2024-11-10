@@ -5,7 +5,7 @@ using { managed } from '@sap/cds/common';
  * Таблица ответов
  */
 entity Answers : managed {
-  key ID : UUID;            // Уникальный идентификатор ответа
+  key ID : UUID @cds.on.insert : uuid;            // Уникальный идентификатор ответа
   answer   : String;          // Текст ответа
 }
 
@@ -16,5 +16,5 @@ entity Questions : managed {
   key ID    : UUID;           // Уникальный идентификатор вопроса
   answer        : Association to Answers;   // Ссылка на ответ
   question      : String;         // Текст вопроса
-  questionVector: String default 'NULL';    // Векторное представление вопроса, вычисляемое автоматически
+  questionVector: LargeString;    // Векторное представление вопроса, вычисляемое автоматически
 }

@@ -34,6 +34,18 @@ annotate service.Answers with @(
             Label : '{i18n>Answer}',
             Value : answer,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : modifiedBy,
+        },
     ],
+    UI.HeaderInfo : {
+        TypeName : 'New Answer',
+        TypeNamePlural : 'New Answer',
+    },
 );
+
+annotate service.Answers with {
+    answer @UI.MultiLineText : true
+};
 

@@ -39,13 +39,20 @@
     "requires": {
       "[production]": {
         "db": "hana",
-        "auth": "xsuaa"
+        "auth": {
+          "kind": "xsuaa",
+          "restrict_all_services": false
+        }
       },
       "html5-repo": true,
       "destinations": true
     },
     "sql": {
       "native_hana_associations": false
+    },
+    "auth": {
+      "kind": "xsuaa",
+      "restrict_all_services": false
     }
   },
   "sapux": [

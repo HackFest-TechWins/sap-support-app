@@ -36,6 +36,15 @@
             "parameters": {},
             "additionalParameters": "allowed"
           }
+        },
+        "questions-show": {
+          "semanticObject": "questions",
+          "action": "show",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
@@ -154,6 +163,6 @@
   },
   "sap.cloud": {
     "public": true,
-    "service": "incidents"
+    "service": "tech_support"
   }
 }

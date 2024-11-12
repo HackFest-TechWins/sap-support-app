@@ -110,7 +110,7 @@ modules:
             - Name: sap-btp-tech-support-app_cdm
               ServiceInstanceName: sap-btp-tech-support-app-html5-runtime
               ServiceKeyName: sap-btp-tech-support-app-html5-runtime-key
-              URL: https://html5-apps-repo-rt.${default-domain}/applications/cdm/tech_support
+              URL: https://html5-apps-repo-rt.cfapps.eu10.hana.ondemand.com/applications/cdm/tech_support
           existing_destinations_policy: ignore
     build-parameters:
       no-source: true
@@ -177,7 +177,7 @@ resources:
                 Name: sap-btp-tech-support-app-rt
                 ProxyType: Internet
                 Type: HTTP
-                URL: https://q-1-techwins-rj5nyvl2.dt.launchpad.${default-domain}
+                URL: https://q-1-techwins-rj5nyvl2.launchpad.cfapps.eu10.hana.ondemand.com
                 HTML5contentprovider: true
             existing_destinations_policy: update
         version: 1.0.0

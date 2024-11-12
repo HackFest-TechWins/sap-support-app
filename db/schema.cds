@@ -16,5 +16,5 @@ entity Questions : managed {
   key ID    : UUID;           // Уникальный идентификатор вопроса
   answer        : Association to Answers;   // Ссылка на ответ
   question      : String;         // Текст вопроса
-  questionVector: LargeString default 'NULL';    // Векторное представление вопроса, вычисляемое автоматически
+  questionVector: LargeString;    // Векторное представление вопроса, вычисляемое автоматически
 }

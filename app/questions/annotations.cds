@@ -129,7 +129,3 @@ annotate service.Questions with {
 };
 
 
-annotate service.Answers with {
-    answer @Common.FieldControl : #ReadOnly
-};
-

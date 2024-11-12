@@ -110,7 +110,7 @@ modules:
             - Name: sap-btp-tech-support-app_cdm
               ServiceInstanceName: sap-btp-tech-support-app-html5-runtime
               ServiceKeyName: sap-btp-tech-support-app-html5-runtime-key
-              URL: https://html5-apps-repo-rt.${default-domain}/applications/cdm/sap-btp-tech-support-app
+              URL: https://html5-apps-repo-rt.${default-domain}/applications/cdm/tech_support
           existing_destinations_policy: ignore
     build-parameters:
       no-source: true

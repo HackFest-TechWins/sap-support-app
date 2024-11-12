@@ -19,7 +19,7 @@ annotate service.Answers with @(
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GeneratedFacet1',
-            Label : 'General Information',
+            Label : 'Общая Информация',
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
     ],
@@ -31,17 +31,18 @@ annotate service.Answers with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : '{i18n>Answer}',
+            Label : '{i18n>Key2}',
             Value : answer,
         },
         {
             $Type : 'UI.DataField',
             Value : modifiedBy,
+            Label : '{i18n>Key3}',
         },
     ],
     UI.HeaderInfo : {
-        TypeName : 'New Answer',
-        TypeNamePlural : 'New Answer',
+        TypeName : 'Ответы',
+        TypeNamePlural : 'Ответы',
     },
 );
 

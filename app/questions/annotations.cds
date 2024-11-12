@@ -11,7 +11,7 @@ annotate service.Questions with @(
             {
                 $Type : 'UI.DataField',
                 Value : answer_ID,
-                Label : 'Answer_ID',
+                Label : 'ID ответа',
             },
         ],
     },
@@ -44,17 +44,13 @@ annotate service.Questions with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : '{i18n>Answerid}',
-            Value : answer_ID,
-        },
-        {
-            $Type : 'UI.DataField',
             Value : question,
             Label : '{i18n>Question}',
         },
         {
             $Type : 'UI.DataField',
             Value : modifiedBy,
+            Label : 'Изменено',
         },
     ],
     UI.HeaderInfo : {
@@ -94,15 +90,17 @@ annotate service.Questions with @(
         {
             $Type : 'UI.DataField',
             Value : answer.answer,
-            Label : 'Answer',
+            Label : 'Ответ',
         },
         {
             $Type : 'UI.DataField',
             Value : answer.modifiedAt,
+            Label : 'Дата изменения',
         },
         {
             $Type : 'UI.DataField',
             Value : answer.modifiedBy,
+            Label : 'Изменено',
         },
     ],
 );

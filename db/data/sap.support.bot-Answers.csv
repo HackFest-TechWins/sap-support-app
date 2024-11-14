@@ -1,6 +1,11 @@
 ID,answer,createdAt,createdBy,modifiedAt,modifiedBy
-1404225b-e6d8-4801-932d-d9907a7c3000,answer-1404225,2007-02-04T19:00:00.000Z,createdBy.u3i9@example.net,2015-07-19T19:00:00.000Z,modifiedBy.u3i9@example.net
-1404226d-fa00-4dcb-bc7c-a0a2ca61dcdf,answer-1404226,2000-12-29T19:00:00.000Z,createdBy.u3ia@example.com,2017-04-18T19:00:00.000Z,modifiedBy.u3ia@example.com
-14042271-c0e6-4824-a89b-b244f6b890d1,answer-1404227,2020-06-16T19:00:00.000Z,createdBy.u3ib@example.org,2004-08-06T19:00:00.000Z,modifiedBy.u3ib@example.org
-14042283-8141-4326-a678-433c62880383,answer-1404228,2004-02-01T19:00:00.000Z,createdBy.u3ic@example.net,2011-07-15T19:00:00.000Z,modifiedBy.u3ic@example.org
-14042294-596f-4ccb-b064-dc387045e3c5,answer-1404229,2020-07-21T19:00:00.000Z,createdBy.u3id@example.org,2000-03-08T19:00:00.000Z,modifiedBy.u3id@example.net
+140422a7-6f82-4f11-bf99-a9a3f10c28a6,Перейдите в настройки безопасности и добавьте обязательную двухфакторную аутентификацию для всех пользователей.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+140422b8-7b6d-4e20-b2d5-7ef0c7a7f9b7,Используйте транзакцию SM36 для создания заданий и планирования их запуска в определенное время.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+140422c9-8aef-4f0d-9578-9e8132d845e8,Для очистки кэша пользователей используйте транзакцию /nSWU3 и выберите опцию для восстановления.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+140422da-9f41-4e32-9e3b-a2b97efc8aa9,Добавьте информацию о клиенте в настройках системного ландшафта для обеспечения совместимости между системами.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+140422eb-2f8c-46f1-b5c8-81bc6e4a5290,Чтобы настроить интеграцию с Google Workspace добавьте OAuth2 клиентские ключи в настройках API.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+140422fc-36e3-4f21-82ef-5e2f7495a2b1,Проверьте таблицу активных пользователей и отключите неиспользуемые учетные записи через SU01.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+1404230d-5f74-4e53-8c12-fb1b1d4e9a63,Настройте локальную обработку данных используя опции в настройках CIF для предотвращения конфликтов.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+1404231e-3f85-4f64-bbd3-bc4d5d2f8b74,При возникновении ошибки синхронизации проверьте подключения к SAP и исправьте несоответствия.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+1404232f-6f96-4f75-a90d-c7e4d6f8c185,Создайте дополнительный экземпляр с репликой данных для улучшения доступности системы.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz
+14042340-9fa7-4f86-afbc-d9d5e7f8d296,Установите все обновления для компонента Gateway чтобы предотвратить уязвимости.,2024-11-12T00:00:00.000Z,sarymov_nursultan@qarmet.kz,2024-11-12T00:00:00.000Z,aman_anuar@qarmet.kz

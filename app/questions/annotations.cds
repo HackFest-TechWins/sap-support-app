@@ -39,11 +39,6 @@ annotate service.Questions with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'ID',
-            Value : ID,
-        },
-        {
-            $Type : 'UI.DataField',
             Value : question,
             Label : '{i18n>Question}',
         },

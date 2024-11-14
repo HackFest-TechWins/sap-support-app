@@ -26,11 +26,6 @@ annotate service.Answers with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'ID',
-            Value : ID,
-        },
-        {
-            $Type : 'UI.DataField',
             Label : '{i18n>Key2}',
             Value : answer,
         },

@@ -1,8 +1,4 @@
-# Auth
-test.support@qarmet.kz
-password: root
-
-## Next Steps
+## Project launch
 
 - Open a new terminal and run `cds watch`
 - (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
